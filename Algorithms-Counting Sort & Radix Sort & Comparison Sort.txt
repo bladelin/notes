@@ -9,3 +9,27 @@ Decision Tree:
 --only comparison algorithm can be viewed as a tree of all possible comparisons & outcomes
 and resulting answer for any particular n
 Ex. binary search
+
+Integer sorting:
+--assume n keys sorting are integers belong to {0 ... k - 1}
+	(each fits in a word)-
+--can do a lot more than comparisons
+
+counting sort:
+	A= 3 5 7 5 5 3 6		size = n
+	 
+	A'=3 3 5 5 5 6 7
+	 
+	Set a array Bof size n
+	for each 
+	
+	L:array of K empty lists
+	for j in range(n):
+		L[key(A[j])].append(A[j])
+	output = []
+	for i in range(K):
+		output.extend(L[i])
+		
+Radix sort:
+	imagine each integer as base b
+	
