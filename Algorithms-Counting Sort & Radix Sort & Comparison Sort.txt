@@ -1,0 +1,11 @@
+Linear time sorting
+
+Comparison model:
+--all input items are black boxes(ADTs)(Abstract Data Type)
+--only operation allowed are comparisons
+--time cost = number of comparisons
+
+Decision Tree:
+--only comparison algorithm can be viewed as a tree of all possible comparisons & outcomes
+and resulting answer for any particular n
+Ex. binary search
