@@ -1,0 +1,60 @@
+Breadth First Search
+Graph Seach:
+	explore a graph
+	
+graph G=(V,E)
+	V = set of vertices
+	R = set of edges
+		unordered pairs or ordered pairs
+		(No direction)	   (has directions)
+		
+Applications of graph search:
+	web crawling
+	social networking
+	network broadcast
+	garbage collection
+	model checking
+	check mathematical conjections
+	solving puzzles of game
+	
+Pocket cube: 2*2*2
+	configuration graph
+		vertex for each possible state of cube
+		edge of each possible move
+		
+Graph representation:
+Adjacency lists:
+	array Adj of |V|
+	linked lists
+		for each vertex u
+		adj[u] stores its neighbors
+		
+object oriented:
+	v.neighbors = adj[v]
+Implicit representation:
+	adj(u) is a function
+	v.neighbors() is a method
+	
+Bread first search:
+	visit all nodes reachable from given set
+	wanna achieve O(V+E)Time
+	look at nodes reachable in O moves, 1 move, 2 move...
+	careful to avoid duplicates
+	
+	BFS(s,ADJ)
+	level ={ s:0 }
+	parent = {s: none}
+	i = 1
+	frontier  = [s]
+	while frontier:
+		next = []
+		for u in frontier:
+			for  v in ADJ[u]
+				if v not in level:
+					level[v] = i
+					parent[v] = u
+					next.append(v)
+			frontier = next
+			i += 1
+			
+	
