@@ -1,2 +1,3 @@
-# Front-End-Learning-Notes
-As the name shows,these are my Front End Development learning notes.Including HTML,JavaScripts,CSS and a little Photoshop
+# Algorithms-Linux-Front End-Tutorial
+As the name shows, these files are my learning notes of all kinds of algorithms that might be useful to me, some Linux programming syntax and syntaxes of web development.
+
