@@ -73,4 +73,12 @@
 			ALTER TABLE tbl_name DROP {INDEX|KEY}index_name
 		删除外键约束：
 			ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol
-		
+		修改列定义：
+			ALTER TABLE tbl_name MODIFY [COLUMN] col_name col_definition [FIRST|AFTER col_name]
+		修改列名称：
+			ALTER TABLE tbl_name CHANGE [COLUMN]old_col_name new_col_name col_definition [FIRST|AFTER col_name]
+		数据表更名：
+			方法1:
+				ALTER TABLE tlb_name RENAME [TO|AS] new_tbl_name
+			方法2：
+				RENAME TABLE tbl_name TO new_tbl_name
