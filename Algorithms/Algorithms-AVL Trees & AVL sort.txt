@@ -1,0 +1,147 @@
+Height of binary tree:length of the longest path from the root down the leaf
+A tree is blanced if the height is h=lg(n)
+Height of a node:length of the longest path from it down to a leaf.
+h = max(height(left child),height(right child))
+
+
+AVL trees:
+require heights of left & right children of every node to different by at most |1|
+AVL trees are balanced:
+worst case is when right subtree has height 1 more than left for every node
+
+Nh = min number of nodes in an AVL tree of height h
+Nh = 1 + N(h-1) + N(h-2) < 2lg(n)
+						 < 1.44lg(n)
+
+Fibonaci: Fn = x^n/sqrt(5) --> theoretical answer but not practical, because the computer has finite number
+of bits to represent a number,i.e. a number has finite precision, so when it is not precise.
+
+
+
+
+							41
+				20						65
+		11				29				50
+					26
+				23--> the new node
+AVL insert:
+	1. simple BST insert
+	2. fix AVL property from changed node
+		--suppose x is lowest node violating AVL
+		--assume x.right higher
+			if x's right child is right heavy or right balanced
+				
+Rotation:
+
+				x
+			↙		↘	
+		A				y
+					↙		↘
+				B				C
+				
+				↓
+				↓
+				↓	Left Rotate(x)
+				↓
+				↓
+	
+				y
+			↙		↘
+		x				C
+	↙		↘
+A				B
+
+
+
+							41
+				20						65
+		11				29				50
+					26
+				23
+		--> Right rotate(29)
+		--> Add 55
+		
+							41
+				20						65
+		11				26			50
+					23		29			55
+					
+		--> Left rotate(50)
+		--> Right rotate(65)
+		
+							41
+				20					55
+		11			26			50		65
+				23		29
+
+
+AVL Sort:	
+1.Insert n items		O(nlgn)
+2.in-order traversal	O(n)
+
+abstract data type:
+	priority queue:
+		insert & delete
+		min		
+	successor/predecessor
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

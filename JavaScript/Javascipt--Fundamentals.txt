@@ -1,0 +1,145 @@
+HTML和CSS的关系：
+	HTML是网页内容载体
+	CSS用来改变网页样式
+	Javascript用来是实现网页的特殊效果
+	
+	格式：
+		直接插入：
+			<script type = "text/javascript">
+				document.write("Hello JavaScript!");
+			</script>
+			可以插入在<head>中，也可以插入在<body>中
+		通过文件引用：
+			<script src = "javaScripts.js"></script>
+			
+		注释：
+			单行注释	//
+			多行注释	/* */
+			
+		定义变量：
+			格式：
+				var 变量名
+				例子:
+					var mychar = "javaScript";
+				区分大小写
+				
+		判断语句：
+			if(...)
+			{...}
+			else
+			{...}
+			例子：
+				var myage = 18;
+				if(myage >= 18)
+				{
+					document.write("adult");
+				}
+				else
+				{
+					document.write("juvenile");
+				}
+		定义函数：
+			function 函数名（）
+			{
+				函数代码；
+			}
+			例子：
+				function add2()
+				{
+					var sum = 3 + 2;
+					alert(sum);
+				}
+		输出内容：
+			document.write()
+			例子：
+				第一种：直接输出字符串
+					document.write("Hello World");
+				第二种：通过变量输出
+					var mystr = "hello world";
+					document.write(mystr);
+				第三种：使用+连接输出内容
+					var mystr = "hello";
+					document.write(mystr + "wolrd");
+				第四种：输出HTML标签，并起作用
+					var mystr = "hello";
+					document.write(mystr+"<br>");
+					（输出hello后输出一个换行符）
+		警告（alert消息对话框）：
+			alert（字符串或变量）
+			例子：
+				<script type = "text/javascript">
+					var mynum = 30;
+					alert("hello");
+					alert(mynum);
+				</script>
+		确认（confirm消息对话框）
+			confirm（str）;
+				str：在消息对话框中要显示的文本
+				返回值：boolean
+					当用户点击“确认”按钮时，返回true
+					当用户点击“取消”按钮时，返回false
+			例子：
+				var mymessage = confirm("Do you like me");
+				if(mymessage == true)
+				{
+					document.write("good");
+				}
+				else
+				{
+					document.write("sad");
+				}
+				（alert，confirm在点击对话框之前都不能进行任何其他操作）
+		提问（prompt消息对话框）
+			prompt（str1,str2）
+				str1:要显示在消息对话框中的文本，不可修改
+				str2:文本框中的内容，可以修改
+				返回值：
+					1.点击确定按钮，文本框中的内容将作为函数返回值
+					2.点击取消按钮，将返回null
+			例子：
+				var myname = prompt("type in your name:");
+				if(myname != null)
+				{
+					alert("hi"+myname);
+				}
+				else
+				{
+					alert("hi my friend");
+				}
+		打开新窗口（window.open）:
+			open可以查找一个已经存在或者新建的浏览器窗口
+			window.open([url],[窗口名称],[参数字符串])
+				url:在窗口中显示网页的网址或路径，可选
+				窗口名称：可选参数，被打开窗口的名称。
+					1.该名称由字母、数字和下划线字符组成。
+					2."_top""_blank""_self"具有特殊意义的名称
+						_blank:在新窗口显示目标网页
+						_self:在当前窗口显示目标网页
+						_top:在框架网页的上部窗口中显示目标网页
+					3.name不能重复，不能包含空格
+				参数字符串：
+					可选参数，设置窗口函数，各参数用逗号隔开
+					参数表：			值
+						top				Number		距离屏幕顶部的像素数
+						left			Number		距离屏幕左边的像素数
+						width			Number		窗口的宽度
+						height			Number		窗口的高度
+						menubar			yes,no		窗口有没有菜单
+						toolbar			yes,no		窗口有没有工具条
+						status			yes,no		窗口有没有状态栏
+						
+				例子：
+					<script type = "text/javascript">
+						window.open('http://www.baidu.com','_blank','width = 300,height = 200,menubar = no,toolbar = no,status = no,scrollbars = yes')
+					</script>
+		关闭窗口：window.close
+			window.close();
+				关闭本窗口
+			或：
+			<窗口对象>.close();
+				关闭指定的窗口
+			例子：
+				var mywin = window.open('http://www.baidu.com');
+				mywin.close();
+			
+			

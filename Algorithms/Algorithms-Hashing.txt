@@ -1,0 +1,131 @@
+Hashing
+Dictionary:Abstract Data Type
+maintain set of item, each with a key(value)
+--insert(item):(overwrite the existing key)
+--delete(item)
+--search(key):return item with given key or report doesn't exist
+
+Motivation:(when to use dictionary)
+--database
+--compilers & interpreters
+--network router
+--network server
+--substring search
+--string commonalities
+--file/directory syncronization
+--cryptography
+
+Simple approach:
+Direct-access table
+1.store items in array indexed by key
+  Badness:
+  --keys may not be integers
+  --gigantic memory hog
+  Solution:
+  --prehash
+	--maps keys to nonnegtive integers
+	  --in theory, keys are finite & discrete(string of bits)
+  --Chaining 
+	avoid conflicts of keys in the same table, use a linked list in the table
+	
+	
+Simple uniform hashing:
+--each key is equally likely to be hashed to any slot of the tables independent of 
+where other keys hashing.
+Analysis:
+	--expectd length of chain for n keys, m slots  =  n/m (load factor) a
+
+	
+Hash functions:
+	1.division method:
+		h(k) = k mod m
+	2.multiplication method:
+		h(k) = [(ak) mod 2^w]>>(w-r)
+		w is the word length of a table slots
+		>> means right shift
+		
+Uniform hashing:
+	k(k) = [(ak+b) mod p] mod m
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

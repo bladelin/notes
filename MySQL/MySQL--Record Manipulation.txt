@@ -1,0 +1,65 @@
+约束：
+	功能：
+		NOT NULL		非空约束
+		PRIMARY KEY		主键约束
+		UNIQUE KEY		唯一约束
+		DEFAULT			默认约束	
+		FOREIGN KEY		外键约束
+	数据列的数目：
+		表级约束
+		列级约束
+
+修改数据表：
+	针对字段的操作：添加/删除字段、修改列定义，修改列名称
+	针对约束的操作：添加/删除各种约束
+	针对数据表的操作：数据表更名（两种方式）
+	
+记录操作：
+	插入记录：
+		第一种方法：
+			INSERT [INTO] tablename [(col_name),...] {VALUES|VALUE} ({expression|DEFAULT},...)(...),...
+		第二种方法：
+			INSERT [INTO] tableName SET columnName = {expression|DEFAULT},...
+			（与第一种方法的区别，此方法可以使用子查询（SubQuery））
+		第三种方法：
+			INSERT [INTO] tableName [(colName,...)]SELECT...
+			（此方法可以将查询结果插入到指定数据表）
+	更新记录:
+		单表更新：
+			UPDATE [LOW_PRIORITY][IGNORE]tableReference SET colName1 = {expression1|DEFAULT}[,colName2 = {expression2|DEFAULT}]...[WHERE whereCondition]
+		单表删除记录DELETE
+			DELETE FROM tableName [WHERE whereCondition]
+		查找记录：
+			SELECT selectExpression [,selct_expr]
+			[
+				FROM table_references
+				[WHERE where_conditions]
+				[GROUP BY {column_name|position}[ASC|DESC],...]
+				[HAVING where_condition]
+				[ORDER BY {column_name|expr|position},[ASC|DESC],...]
+				[LIMIT{[offset],row_count|row_count OFFSET offset}]
+			]
+			查询表达式：
+				每一个表达式表示想要的一列，必须有至少一个。
+				多个列之间以英文逗号分隔。
+				星号（*）表示所有列。table_name.*可以表示命名表的所有列。
+				查询表达式可以使用[AS]alias_name 为其赋予别名
+				别名可用于GROUP BY,ORDER BY 或HAVING 字句。
+			WHERE 
+				条件表达式：
+					对记录进行过滤，如果没有指定WHERE子句，则显示所有记录。
+					在WHERE表达式中，可以使用MySQL支持的函数或运算符。
+			GROUP BY
+				查询结果分组：
+					[GROUP BY {col_name|position}[ASC|DESC],...]
+					（ASC升序显示，DESC降序显示）
+			HAVING 
+				分组条件：
+					HAVING where_condition
+			ORDER BY
+				对查询结果进行排序：
+					[ORDER BY{col_name|expr|position}[ASC|DESC],...]
+			LIMIT 
+				限制查询结果返回的数量
+				[LIMIT {[offset,]row_count|row_count OFFSET offset}]
+				

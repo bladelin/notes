@@ -1,0 +1,64 @@
+Hashing III
+Open addressing
+Uniform Hashing Analysis
+Criptography Hashing
+
+Open addressing(to solve clision)
+no chaining
+
+one item per slot so m>= n		m size of table number of elements
+Probing:
+	Hash function specifies order of slts to probe for a key (for insert/search/delete)
+
+Example:				
+		0:
+		1: 586		h(586,1)	h(496,1) --> fails
+		2: 133		h(133,1)	h(496,2) --> fails
+		3: 496				<--	h(496,3) --> success
+		4: 204
+		5:
+		6: 481 
+		7:
+		
+Search(k):As long as the slots encounted are occupied by keys not equal to k,
+keep probing until you either encounter k or find an empty slot
+
+Insert(k,v):
+	keep probing until an empty slot is found. 
+	Insert the value k to that postion.
+
+Uniform Hashing Assumption
+Each key ie equal likely to have any one of the m! permutation on its probe sequence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,167 @@
+Advantage of sorting:
+Finding a median
+B[0:n] is the sorted array of given array A[0:n]
+Then B[n/2] is the median of array A
+
+Not obvious application:
+Data compression
+Computer graphics
+
+Binary Search:
+Find a specific number in a array[]
+
+
+Insertion Sort:
+For i = 1,2,...n
+	insert A[i] into sorted array A[0:n-1]
+	by pairwise swaps down to the correct positions
+	
+Array A 	sort in increasing order
+By move number toward left until find one number smaller than it
+i.e. compare and swap
+
+2 is the key
+5 2 4 6 1 3
+4 is the key
+2 5 4 6 1 3
+6 is the key 
+2 4 5 6 1 3
+1 is the key
+2 4 5 6 1 3
+Because 1 is smaller than all number on its left,so 1 will move to the left end
+3 is the key
+1 2 4 5 6 3
+1 2 3 4 5 6 
+
+Complexity O(n^2)
+
+Improvement:
+use binary search on the left side of the key element(element to be compared)
+
+Complexity O(nlgn)
+
+Merge Sort (Divide and Conquer):
+
+	A[0:n]	
+L[0:n/2-1]		R[n/2:n] 	
+Sort L & R
+L' = 20 13 7 2	R' = 12 11 9 1	the sorted sub-array
+Merge L' & R'
+By Compare the smallest elements from L' & R'
+1 & 2 take 1 --> 2 & 9 take 2 --> 7 & 9 take 7 ...
+Move the smaller one into sorted array A' Recursively
+Finally
+A' = 1 2 7 9 11 12 13 20
+
+
+The way to sort sub-array is also divide and merge until there is only
+one element for each sub-array
+
+Complexity	O(nlgn)
+
+Advantage of Insertion Sort over Merge Sort, Insertion Sort use lesser memory space
+
+Sorting Efficiency:
+	In Python:
+	Merge Sort: 		2.2 nlg(n)
+	Insertion Sort:		0.2	n^2
+	In C:	
+	Insertion Sort:		0.01 n^2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+Binary Search
+
+BST (Binary Search Tree)
+
+Definition of the problem
+Runway Reservation System:
+
+Airport with a single runway
+
+Reservations for future landings
+Reserve request specifies landing time t
+Add t to the set R if no other landdings are scheduled within k minutes
+Remove from set R after plane lands
+
+
+Example:
+now t = 37
+You made a request to land at 53
+k = 3
+timeline:
+37 41.2 49 56.3...
+so 53 is ok
+44 not allowed because time range smaller than 3 minutes
+20 not allowed because the time has past
+
+
+Binary Search Tree
+
+				30
+		17				40
+	14		20
+	
+Each node X has a key(x)(value) a parent and left child, right child.
+
+FOr all nodes X, if y is in the left substree of X key(y) <= key(x)
+if y is in the right subtree of X key(y) >= key(x)
+
+Insert
+
+Insert 49
+Insert 79 compare 79 > 49;79 is in the right subtree
+Insert 46 compare 46 < 49;46 is in the left subtree
+Insert 41 compare 41 < 49;41 --> left  41 < 46; 41 --> left
+Insert 42 compare 42 < 49;42 --> left  42 < 46; 42 --> left 42 > 41; 42 --> right
+If we have the constraint range has to be big than 3, the insertion of 42 will fail.
+
+					49
+			46				79
+		41
+			(42)
+
+H: height of tree
+
+find min() keep going left
+find max() keep going right
+
+New requirement:
+Rank(t) 
+How many planes are scheduled to land at time <= t ?
+
+Augment the BST structure
+
+				49 
+		46				79
+					64		83
+					
+Insert or delete will modify the subtree sizes
+
+For example:
+To add a new number 43:
+
+				49 
+		46				79
+	43				64		83
+
+What lands before t ?
+1.Walk down tree to find the desired time
+2.Add in the nodes that are smaller than t
+3.Add in the subtrees' size to the left
+Find elements <= 79
+
+	49 add 1
+	add 2 for node 46,43, so there are two node smaller than 79, but we don't need to actually count
+	them because all the node that are smaller than 46 is on the left of 46
+	Add 1 for 79
+	Add 1 for 64
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
