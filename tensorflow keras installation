@@ -1,0 +1,11 @@
+tensorflow
+google approach(has to activate tensoflor every time)
+C:> conda create -n tensorflow python=3.5
+activate tensorflow
+pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-1.0.1-cp35-cp35m-win_amd64.whl
+
+simple way(simply run scripts below, and follow instructions, tensorflow will be installed easily, no need to activate tensorflow environment path)
+conda install -c conda-forge tensorflow
+
+keras
+conda install --channel https://conda.anaconda.org/conda-forge keras
