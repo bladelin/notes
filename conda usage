@@ -1,0 +1,15 @@
+#update anaconda package
+conda update [module]
+  e.g. conda update conda
+       conda update numpy
+
+#install anaconda package
+conda install [module]
+  e.g. conda install scipy
+       conda install h5py
+
+#install by channel
+conda install -c conda-forge tensorflow
+
+#search package available on anaconda cloud
+anaconda search -t conda keras
