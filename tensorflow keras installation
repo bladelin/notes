@@ -9,3 +9,4 @@ conda install -c conda-forge tensorflow
 
 keras
 conda install --channel https://conda.anaconda.org/conda-forge keras
+
