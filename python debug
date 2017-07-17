@@ -1,0 +1,17 @@
+ipython reports error "operation on closed files", this is a bug of ipython.
+can be solved by using native python console in spyder
+
+h5py reports 'no internal conversion method for ('U<8')', this is a bug of numpy and h5py
+h5py doesn't support numpy encoded strings.
+can be solved by explicitly encode numpy strings into 'utf-8' format by:
+  strs = [s.encode('utf-8') for s in strs]
+  
+h5py doesn't support native python dict, has to concert to strings before storing to disk
+using json to serialise dict into string format
+      times = {"train_time":train_time,
+             "test_time":test_time,
+             "predict_time":predict_time,
+             "total_time":total_time}
+      times = json.dumps(times)
+      
+      times = json.load(times)
