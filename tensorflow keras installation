@@ -12,4 +12,4 @@ conda install --channel https://conda.anaconda.org/conda-forge keras
 
 ubuntu report no write permission when using conda install tensorflow
 sudo chown -R usr foldername, linux command to change ownership
-then conda install -c conda forge tensorflow
+then conda install -c conda forge tensorflow 
