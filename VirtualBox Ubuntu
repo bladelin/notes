@@ -1,0 +1,3 @@
+share folder
+devices-->shared folders settings-->machine folder-->add-->make permanent-->auto mount
+sudo adduser <username> vboxsf
