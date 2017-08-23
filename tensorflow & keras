@@ -19,3 +19,39 @@ sudo chown -R usr foldername, cannot apply on root folder, or will spoil ubuntu 
 tensorboard:
 open cmd in log dir, e.g. D:\\data\\logs
 tensorboard --logdir=../logs, then open 0.0.0.0:6006 or localhost:6006 in browser
+
+
+ipython reports I/O operation on closed files.
+This is a bug of ipython, repeatable when intensively reading files, use native python interpreter can get rid of this problem.
+
+enable vnc connection access on ubuntu
+open sharing desktop, open all related options
+install dconf-editor, sudo apt-get install dconf-editor 
+open dconf-editor in cmdline, disable the option "enable encryption"
+dconf-editor
+org-gnome-desktop-remote access-enable encryption (inverse selection)
+
+ubuntu install gpu driver:
+Download latest linux-64 version gpu driver from nvidia
+Go to the directory of driver file and upgrade access right
+Sudo chmod +x NVIDIA**.run
+Close current display and go to cmdline mode
+Sudo service lightdm stop
+Press CTRL+ALT+F1 to enter cmdline mode
+Login ubuntu under cmdline mode
+Install gpu driver and return desktop mode
+Go to the directory of driver file
+Sudo ./NVIDIA**.run, follow all the instructions
+Sudo service lightdm start
+CTRL+ALT+F7 (optional) 
+
+Error handling, cannot enter cmdline mode by CTRL+ALT+F1
+Solution: update grub
+Sudo gedit /etc/default/grub
+Find GRUB_CMDLINE_LINUX_DEFAULT
+Replace “quiet splash” by “nomodeset”
+Sudo update-grub
+Sudo reboot
+Error handling, login incorrect in cmdline mode
+Check your username, has to be the root user
+Do not use numeric keypad, use numeric keys on primary keyboard.
