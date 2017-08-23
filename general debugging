@@ -1,0 +1,47 @@
+Syntax error on strings:
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 252-253: malformed \N character escape
+Occurs when “’ ’” is used to comment code in python3.6
+Solution:
+r‘’’ ’’’, add r to the front of triple quote
+Import Error:
+No module named “StringIO”
+In python3, StringIO is in io module, use:
+from io import StringIO
+
+GPU low on memory:
+Exception:
+GPU memory exhausted
+Decrease batch size of data training phase.
+Method to estimate memory usage:
+batch size * image dimension * num of kernel
+Available memory on GTX-1080-Ti: 11GB
+
+Error handling, cannot enter cmdline mode by CTRL+ALT+F1
+Solution: update grub
+Sudo gedit /etc/default/grub
+Find GRUB_CMDLINE_LINUX_DEFAULT
+Replace “quiet splash” by “nomodeset”
+Sudo update-grub
+Sudo reboot
+Error handling, login incorrect in cmdline mode
+Check your username, has to be the root user
+Do not use numeric keypad, use numeric keys on primary keyboard.
+
+Exception:
+I/O operation on closed file
+This is a bug of IPython interpreter, repeatable when intensively reading files on disk.
+Use native python interpreter, don’t use IPython when need to read a lot of files.
+
+Exception type:
+Windows reports low memory or
+Anaconda python kernel crash
+Adjust virtual memory, make it larger than 2GB
+Disable windows resource exhaustion detection and resolution
+Edit group policy
+Administrative template
+System
+Troubleshooting and diagnostics
+Windows resource exhaustion detection and resolution
+Disabled
+Restart
+
