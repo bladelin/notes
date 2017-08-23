@@ -55,3 +55,16 @@ Sudo reboot
 Error handling, login incorrect in cmdline mode
 Check your username, has to be the root user
 Do not use numeric keypad, use numeric keys on primary keyboard.
+
+Exception type:
+Windows reports low memory or
+Anaconda python kernel crash
+Adjust virtual memory, make it larger than 2GB
+Disable windows resource exhaustion detection and resolution
+Edit group policy
+Administrative template
+System
+Troubleshooting and diagnostics
+Windows resource exhaustion detection and resolution
+Disabled
+Restart
