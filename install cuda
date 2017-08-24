@@ -4,3 +4,13 @@ ubuntu
 download deb version installer
 
 do the pre-installation checkings
+
+go to download directory
+
+$ sudo dpkg -i cuda-repo-<distro>_<version>_<architecture>.deb
+$ sudo apt-get update
+$ sudo apt-get install cuda
+
+add cuda into environment path,do not directly copy this command from document, manually write these command into cmdline
+or might damage the system environment path
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
