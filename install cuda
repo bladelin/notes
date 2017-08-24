@@ -1,12 +1,6 @@
-download cuda from nvidia
-shutdown the gui service: sudo service lightdm stop
-goto cmdline mode: ctrl+alt+1
- \t if cannot get in cmdline mode, update grub file: sudo gedit /etc/default/grub
- \t replace "quiet splash" with "nomodeset"
-sudo sh <the cuda filename>
-follow all the instructions and do not install opengl library
-then add cuda to environment path(see docs on nvidia)
+follow cuda documents
 
+ubuntu
+download deb version installer
 
-or:
-sudo apt-get install nvidia-cuda-toolkit,might not working
+do the pre-installation checkings
