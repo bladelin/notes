@@ -1,0 +1,8 @@
+Download faster-rcnn package from:
+  https://github.com/smallcorgi/Faster-RCNN_TF
+Edit .config files by following instructions:
+  https://github.com/rbgirshick/py-faster-rcnn/issues/356
+  https://github.com/rbgirshick/py-faster-rcnn/issues/123
+  https://github.com/rbgirshick/py-faster-rcnn/issues/205
+
+
