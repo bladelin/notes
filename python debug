@@ -15,3 +15,19 @@ using json to serialise dict into string format
       times = json.dumps(times)
       
       times = json.load(times)
+      
+error:_NamespacePath object has no attribute sort (31.0.0)
+  This is a error of pip9, comes with anaconda3.6, pip8 will work
+  Solution: install anaconda 4.2.0 with python3.5.2
+ 
+error:conda install -c anaconda tensorflow-gpu, cmd will report pkg conflicts with numpy and cuda
+  Solution: uninstall dlib --> conda uninstall dlib
+  Then install tensorflow-gpu, install dlib again after installing tensorflow-gpu and keras
+  
+error:panda has no attribute _computation
+  This is a error happens during installing keras
+  Solution:update module dask after installing keras --> conda update dask
+  
+notes:cannot find imutils in anacodna cloud
+  Solution: use pip to install imutils --> pip install imutils
+  imutils is a library for non_maximum_suppression
