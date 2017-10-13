@@ -1,0 +1,60 @@
+referenced links
+  http://blog.csdn.net/zhangzm0128/article/details/71698880
+  http://blog.csdn.net/u011185952/article/details/71079038
+  
+requirements:
+  CUDA8.0, cuDnn5.x for CUDA 8.0
+  Anaconda2 with python2.7
+    very important, failed many times with python3, using 2to3 converter doesn't work, 
+    register anaconda as default python interpreter and add into system path
+  python pacakges:
+    opencv, protobuf, easydict and many...
+      easydict only exists in pip --> pip install easydict
+  VS2015
+  github packages:
+    BVLC/caffe source code and pre-compiled binaries for python2.7
+    rgb/py-faster-rcnn
+    MrGF/py-faster-rcnn-windows
+settings:
+  install cuda and cudnn, add cuda/8.0/bin into system path (usually auto registered as cuda installation finished), 
+    add nvcc into user's path
+  add cl.exe directory in visual studio into system path
+steps:
+  extract downloaded caffe binaries, copy caffe/python/caffe into anaconda2/lib/site-packages
+  replace ./lib in py-faster-rcnn with ./lib in py-faster-rcnn-windows, update setup_cuda.py in ./lib, change _arch=sm_35 into sm_61 or 
+    the value correspond to your GPU, change the cuda\\v7.5\\include into your local cuda root
+  find file proposal_layer.py under ./lib/rpn, change 'param_str_' into 'param_str'
+    change cfg_key = str(self.phase) into cfg_key = str('TRAIN' if self.phase == 0 else 'TEST')
+  run python setup.py install and python setup_cuda.py install,
+    if reports error, SET VS90COMNTOOLS=%VS140COMNTOOLS%
+    
+  go to BVLC/caffe and switch to windows fork
+    git checkout windows
+  copy roi_pooling_layer.cpp, roi_pooling_layer.cu, smooth_l1_loss_layer.cpp, smooth_l1_loss_layer.cu 
+    from py-faster-rcnn/caffe-fast-rcnn/src/caffe/layers into BVLC/caffe/src/caffe/layers and copy fast_rcnn_layers.hpp
+    from py-faster-rcnn/caffe-fast-rcnn/include/caffe into BVLC/caffe/include/caffe
+  modify BVLC/caffe/src/caffe/proto/caffe.proto as follows from line 407: to update the .proto file, or compile will fail
+      optional ROIPoolingParameter roi_pooling_param = 8266711;  
+      optional SmoothL1LossParameter smooth_l1_loss_param = 8266712;
+    }
+    message ROIPoolingParameter {  
+      // Pad, kernel size, and stride are all given as a single value for equal  
+      // dimensions in height and width or as Y, X pairs.  
+      optional uint32 pooled_h = 1 [default = 0]; // The pooled output height  
+      optional uint32 pooled_w = 2 [default = 0]; // The pooled output width  
+      // Multiplicative spatial scale factor to translate ROI coords from their  
+      // input scale to the scale used when pooling  
+      optional float spatial_scale = 3 [default = 1];  
+    }  
+    message SmoothL1LossParameter {  
+      // SmoothL1Loss(x) =  
+      //   0.5 * (sigma * x) ** 2    -- if x < 1.0 / sigma / sigma  
+      //   |x| - 0.5 / sigma / sigma -- otherwise  
+      optional float sigma = 1 [default = 1];  
+    }
+  find build_win.cmd in BVLC/caffe/scripts and change NINJIA and CPU_ONLY to 0, change python root into
+    your local anaconda2 root near line 10 and line 70.
+  run build_win.cmd in cmd propmt, after finish, replace ./python in py-faster-rcnn/caffe-fast-rcnn with 
+    ./python in BVLC/caffe (just now compiled python interface)
+  download pre-trained model into py-faster-rcnn/data, link can be found in faster_*.sh file in ./data/scripts
+  run python demo.py in py-faster-rcnn/scripts
