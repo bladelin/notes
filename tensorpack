@@ -1,0 +1,5 @@
+install tensorpack fail with permission error:
+PermissionError: [Errno 13] Permission denied: 'C:\\Program Files\\Anaconda3\\Lib\\site-packages\\zmq\\libzmq.cp35-win_amd64.pyd'
+
+Solution:
+  close IDE, then install again
