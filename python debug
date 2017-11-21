@@ -31,3 +31,9 @@ error:panda has no attribute _computation
 notes:cannot find imutils in anacodna cloud
   Solution: use pip to install imutils --> pip install imutils
   imutils is a library for non_maximum_suppression
+
+
+error: dll not found while installing latest opencv via pip
+  This is a bug with anaconda4.2, the anaconda team forget to copy python3.dll to release library
+  Solution: download offical release version python3.x and copy python3.dll to anaconda root foder
+  
