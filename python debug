@@ -37,3 +37,6 @@ error: dll not found while installing latest opencv via pip
   This is a bug with anaconda4.2, the anaconda team forget to copy python3.dll to release library
   Solution: download offical release version python3.x and copy python3.dll to anaconda root foder
   
+error: PermissionError: [WinError 5] Access is denied when installing tensorflow-gpu via pip
+  Solution: Run cmd.exe as administrator, and be careful to close any opened python program or spyder
+  before running this command.
