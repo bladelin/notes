@@ -1,0 +1,6 @@
+how to compile cython code to dynamic link libs?
+  python setup.py build_ext --inplace
+  
+how to analyse .pyx code to check where to optimize?
+  cython -a cython_code.pyx
+  this line of code will generate .html report about the .pyx code.
